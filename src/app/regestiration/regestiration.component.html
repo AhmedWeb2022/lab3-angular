@@ -1,0 +1,31 @@
+<div class="reg">
+  <div class="reg-input">
+    <h1>Add Student</h1>
+    <div class="checkbox">
+      <input type="text" required="required" [(ngModel)]="sName" />
+      <span>Name</span>
+      <i></i>
+      <div class="name-error" *ngIf="sName.length < 3 && sName != ''">
+        Your Name must be at least three character
+      </div>
+    </div>
+    <div class="checkbox">
+      <input type="number" required="required" [(ngModel)]="sAge" />
+      <span>Age</span>
+      <i></i>
+      <div
+        class="name-error"
+        *ngIf="sAge < 20 || (sAge > 40 && sAge != null) && sAge != 0"
+      >
+        Your age must be between 20 to 40
+      </div>
+      <div
+        class="name-error"
+        *ngIf="sName == '' && (sAge == 0 || sAge == null)"
+      >
+        {{ error }}
+      </div>
+    </div>
+    <input class="btn" type="button" value="Add" (click)="sendData()" />
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="cont">
+  <div class="user-info">
+    <h1>Student Details</h1>
+    <hr />
+    <table>
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Age</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of dataFromParent">
+          <td>{{ s.name }}</td>
+          <td>{{ s.age }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
